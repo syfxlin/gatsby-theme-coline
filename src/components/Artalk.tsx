@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import ArtalkComment from "artalk";
-// module import not working
-import "../../node_modules/artalk/dist/Artalk.css";
+import "artalk/dist/Artalk.css";
 import { useU } from "@syfxlin/ustyled";
 
 type Props = {
@@ -12,15 +11,16 @@ type Props = {
 const Artalk: React.FC<Props> = ({ pageTitle, pageKey }) => {
   const { ctx } = useU();
   useEffect(() => {
-    new ArtalkComment({
+    ArtalkComment.init({
       el: `#comment`,
       pageTitle,
       pageKey,
       placeholder: "留下你的足迹 ∠( ᐛ 」∠)＿",
       noComment: "快来成为第一个评论的人吧~",
-      readMore: {
-        pageSize: 15,
+      pagination: {
+        readMore: true,
         autoLoad: true,
+        pageSize: 15,
       },
       darkMode: ctx.mode === "dark",
       server: process.env.GATSBY_ARTALK_SERVER_URL,
