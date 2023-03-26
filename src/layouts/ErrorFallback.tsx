@@ -7,7 +7,7 @@ export const ErrorFallback: React.FC<FallbackProps> = (props) => {
   // prettier-ignore
   const url = useMemo(() => {
     const w = typeof window !== "undefined" ? window : {} as any;
-    const url = new URL("https://github.com/syfxlin/blog/issues/new");
+    const url = new URL("https://github.com/syfxlin/gatsby-theme-coline/issues/new");
     url.searchParams.set("title", `Uncaught exception on page: ${w?.location?.toString()}`);
     url.searchParams.set("labels", "bug");
     let body = "";
@@ -29,7 +29,7 @@ export const ErrorFallback: React.FC<FallbackProps> = (props) => {
       页面出现了一些问题。如果您有空闲时间，麻烦您点击该&nbsp;
       <Link
         to={url}
-        aria-label="create syfxlin/blog issues"
+        aria-label="create syfxlin/gatsby-theme-coline issues"
         target="_blank"
         rel="nofollow noopener noreferrer"
       >

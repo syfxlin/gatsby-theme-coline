@@ -9,7 +9,7 @@
     "gatsby-theme",
     "gatsby-theme-coline"
   ],
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsup",
     "watch": "tsup --watch"
